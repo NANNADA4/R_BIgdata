@@ -1,3 +1,5 @@
 x <- c(7, 8, 9, 9, 10, 11, 14, 15, 15, 18, 30, 80, 100)
-fivenum(x, na.rm = TRUE)
-summary(x, na.rm = TRUE)
+y <- fivenum(x, na.rm = TRUE)
+z <- summary(x, na.rm = TRUE)
+print(y)
+print(z)
