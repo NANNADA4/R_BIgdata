@@ -14,3 +14,12 @@ View(result4)
 
 result5 <- arrange(mtcars, mpg, desc(wt))
 View(result5)
+
+result6 <- select(mtcars, am)
+View(result6)
+
+result7 <- select(mtcars, mpg, hp, disp)
+View(result7)
+
+result8 <- select(mtcars, -am)
+View(result8)
