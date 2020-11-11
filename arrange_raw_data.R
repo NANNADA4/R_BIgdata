@@ -19,9 +19,9 @@ exdata2$AGE_GR <- ifelse(exdata2$AGE >= 50, "50대",
 
 #실습 문제
 #1년 평균 이용금액 변수와 데이터 추가
-exdata2$AMT_AVG <- 2 / (exdata2$Y16_AMT + exdata2$Y17_AMT)
+exdata2$AMT_AVG <- (exdata2$Y16_AMT + exdata2$Y17_AMT) / 2
 #1년 평균 이용횟수 변수와 데이터 추가
-exdata2$CNT_AVG <- 2 / (exdata2$Y16_CNT + exdata2$Y17_CNT)
+exdata2$CNT_AVG <- (exdata2$Y16_CNT + exdata2$Y17_CNT) / 2
 #SEX 변수의 데이터값 변경
 exdata2$SEX <- ifelse(exdata2$SEX == "M", "남자", "여자")
 #1회 평균 금액 100,000 이상이면 VIP, 50,000 ~ 100,000 미만이면 NORMAL, 50,000이하면 DANGER
