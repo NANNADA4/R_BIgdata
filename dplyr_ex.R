@@ -23,3 +23,9 @@ View(result7)
 
 result8 <- select(mtcars, -am)
 View(result8)
+
+result9 <- mutate(mtcars, years = "1974")
+View(result9)
+
+result10 <- mutate(mtcars, level = ifelse(mpg > 20, "good", "normal"))
+View(result10)
