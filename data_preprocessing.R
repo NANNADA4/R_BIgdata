@@ -28,7 +28,7 @@ Y16_summary <- summarise(exdata1, Y16AMT_mean = mean(Y16_AMT), Y16CNT_mean = mea
 View(Y16_summary)
 
 gender <- group_by(exdata1, SEX)
-gender_freq <- summarise(gender, n())
+gender_freq <- summarise(gender, gender_frequency = n())
 View(gender_freq)
 
 exdata2 <- mutate(exdata1, T_CNT = Y16_CNT + Y17_CNT, T_AMT = Y16_AMT + Y17_AMT, AVG_AMT = T_AMT / T_CNT)
@@ -42,3 +42,7 @@ View(exdata3)
 age_grp <- group_by(exdata3, AGE_GRP)
 exdata4 <- summarise(age_grp, mean(AVG_AMT))
 View(exdata4)
+
+gender_AMTCNT <- group_by(exdata2, SEX)
+exdata5 <- summarise(gender_AMTCNT, mean(T_CNT), mean(T_AMT), mean(AVG_AMT))
+View(exdata5)
