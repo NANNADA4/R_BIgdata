@@ -15,3 +15,6 @@ View(join_data3)
 
 join_data4 <- left_join(data1, data2, by = "ID")
 View(join_data4)
+
+join_data5 <- full_join(data1, data2, by = "ID")
+View(join_data5)
