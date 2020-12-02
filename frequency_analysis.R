@@ -34,20 +34,20 @@ exdata <- read_excel("./datas/06-1.xlsx")
 
 exdata1 <- mutate(exdata, T_CNT = Y16_CNT + Y17_CNT)
 
-summarise(exdata1, MEAN_CNT = mean(exdata1$T_CNT), MED_CNT = median(exdata1$T_CNT))
-summarise(exdata1, SD_CNT = sd(exdata1$T_CNT))
-summarise(exdata1, VAR_CNT = var(exdata1$T_CNT))
+summarise(exdata1, MEAN_CNT = mean(T_CNT), MED_CNT = median(T_CNT))
+summarise(exdata1, SD_CNT = sd(T_CNT))
+summarise(exdata1, VAR_CNT = var(T_CNT))
 
 exdata2 <- mutate(exdata1, AVG_AMT = (AMT17 + AMT16) / 2)
 
-summarise(exdata2, MEAN_AMT = mean(exdata2$AVG_AMT), MED_AMT = median(exdata2$AVG_AMT))
-summarise(exdata2, SD_AMT = sd(exdata2$AVG_AMT))
-summarise(exdata2, VAR_CMT = var(exdata2$AVG_AMT))
+summarise(exdata2, MEAN_AMT = mean(AVG_AMT), MED_AMT = median(AVG_AMT))
+summarise(exdata2, SD_AMT = sd(AVG_AMT))
+summarise(exdata2, VAR_CMT = var(AVG_AMT))
 
 exdata3 <- group_by(exdata2, AREA)
 
-summarise(exdata3, MEAN_AGE = mean(exdata3$AGE), MEDIAN_AGE = median(exdata3$AGE))
-summarise(exdata3, MEAN_AMT = mean(exdata3$AVG_AMT), median(exdata3$AVG_AMT), sum(exdata3$AVG_AMT), sd(exdata3$AVG_AMT))
+summarise(exdata3, MEAN_AGE = mean(AGE), MEDIAN_AGE = median(AGE))
+summarise(exdata3, MEAN_AMT = mean(AVG_AMT), median(AVG_AMT), sum(AVG_AMT), sd(AVG_AMT))
 
 freq_AREA <- freq(exdata2$AREA, plot = F)
 freq_AREA
@@ -55,6 +55,6 @@ freq_AREA
 freq_gear <- freq(mtcars$gear, plot = F)
 freq_gear
 
-summarise(mtcars, MEAN_MPG = mean(mtcars$mpg), MEDIAN_MPG = median(mtcars$mpg))
-summarise(mtcars, SD_MPG = sd(mtcars$mpg))
-summarise(mtcars, VAR_mpg = var(mtcars$mpg))
+summarise(mtcars, MEAN_MPG = mean(mpg), MEDIAN_MPG = median(mpg))
+summarise(mtcars, SD_MPG = sd(mpg))
+summarise(mtcars, VAR_mpg = var(mpg))
